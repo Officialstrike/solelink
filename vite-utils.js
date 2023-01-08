@@ -87,9 +87,9 @@ export const createCSP = {
 export const loadConfig = () => {
     // Check if the template.toml file exists and if the config environment variable is not set
     if (!fs.existsSync("template.toml", "utf8") && !process.env?.config) {
-        // If neither the template.toml file nor the config environment variable are present, log an error and exit the application with code 78
+        // If neither the template.toml file nor the config environment variable are present, log a suggestion to use template.blank.toml as a starting point and mention template.example.toml as an example
         console.error(
-            "No config found. Please either add a file called template.toml in the root dir or specify a base64 encoded TOML config in the 'config' environment variable.",
+            "No config found. If you are looking for an example, you can refer to template.example.toml. Otherwise, consider using template.blank.toml as a starting point for your template.toml configuration file. Alternatively, you can specify a base64 encoded TOML config in the 'config' environment variable.",
         );
         process.exit(78);
     }
