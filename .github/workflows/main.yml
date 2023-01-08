@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set node-version
+        run: echo "::set-env name=NODE_VERSION::$(cat .node-version)"
       - uses: actions/setup-node@v2
         with:
-          node-version: $(cat .node-version)
+          node-version: ${{ env.NODE_VERSION }}
       - name: load config
         run: base64 template.example.toml > config.b64
       - name: install dependencies 
