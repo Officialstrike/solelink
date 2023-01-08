@@ -3,7 +3,7 @@
 </p>
 <br/>
 <p align="center">
-  <a href="/LICENSE.md"><img src="https://img.shields.io/github/license/officialstrike/solelink?style=flat-square" alt="License"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/officialstrike/solelink?style=flat-square" alt="License"></a>
   <a href="https://github.com/officialstrike/solelink/issues"><img src="https://img.shields.io/github/issues/officialstrike/solelink?style=flat-square" alt="Issues"></a>
   <a href="https://github.com/officialstrike/solelink/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/officialstrike/solelink?style=flat-square" alt="Contributors"></a>
   <!-- TODO: create example site -->
