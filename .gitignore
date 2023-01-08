@@ -12,3 +12,4 @@ dist
 *.cpuprofile
 *.local
 *.log
+template.toml
