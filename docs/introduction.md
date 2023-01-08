@@ -34,7 +34,7 @@ To use our application, you'll need to configure it with your specific settings.
 
 To configure your application, you have two options:
 
-1.  Edit the template.toml file with your desired settings and save it as config.toml. A fully documented template.toml file, as well as an example template.example.toml file, can be found in the root directory of the project. We recommend this option if you need to get static assets as the output.
+1.  Create a config.toml file using template.blank.toml as a starting point. You can find template.blank.toml and an example template.example.toml file in the root directory of the project. Both template.blank.toml and template.example.toml are fully commented examples, but template.example.toml provides an example configuration. We recommend this option if you need to generate static assets as the output.
 
 2.  Base64 encode your desired configuration and set it as the config environment variable. To base64 encode your configuration, you can use a tool like this one: https://www.base64encode.org/. Setting an environment variable will vary depending on your operating system and the application you are using to run our application.
 

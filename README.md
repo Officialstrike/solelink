@@ -29,8 +29,8 @@
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/download/) anything above v14.18.0
 - [Yarn package manager](https://yarnpkg.com/getting-started/install)
-- Edit the [template.toml](template.toml) file
-- Place your images etc in
+- Create a template.toml file and use template.blank.toml as a starting point
+- Place your assets in the correct directory. For example, images should go in the src/images folder
 - Clone the repository and make it your current working directory
 
 ### Commands
