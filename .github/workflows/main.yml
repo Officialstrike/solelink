@@ -1,14 +1,41 @@
+name: Build
+
 on: [push]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - uses: actions/checkout@v3
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: $(cat .node-version)
+      - name: load config
+        run: base64 template.example.toml > config.b64
+      - name: install dependencies 
+        run: yarn install
+      - name: build project
+      - run: config=$(cat config.b64) yarn build
+      - uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages publish --project-name=solelink
+          command: pages publish dist --project-name=solelink
+
+
+# on: [push]
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     name: Deploy
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Convert file to base64
+#         run: base64 template.example.toml > output.txt
+#       - name: Publish
+#         uses: cloudflare/wrangler-action@2.0.0
+#         with:
+#           apiToken: ${{ secrets.CF_API_TOKEN }}
+#           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+#           command: config=$(cat output.txt) pages publish --project-name=solelink
