@@ -15,7 +15,7 @@ jobs:
       - name: install dependencies 
         run: yarn install
       - name: build project
-      - run: config=$(cat config.b64) yarn build
+        run: config=$(cat config.b64) yarn build
       - uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
