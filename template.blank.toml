@@ -16,7 +16,7 @@ avatar = ""
 [[elements]]
 
 # The name of the element, displayed under its closed accordion.
-name = "a"
+name = ""
 
 # The file path of the element's logo image, displayed beside the name in the accordion.
 # Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
