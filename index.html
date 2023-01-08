@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 32×32 -->
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <!-- Responsive SVG -->
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <!-- 180×180 -->
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <title><%= title %></title>
+        <meta name="Description" content="<%= description %>" />
+
+        <meta property="og:title" content="<%= title %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="/" />
+        <meta property="og:description" content="<%= description %>" />
+        <meta property="og:image" content="/ogp.png" />
+
+        <link
+            rel="preload"
+            href="src/fonts/poppins-v19-latin-500.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin=""
+        />
+        <link
+            rel="preload"
+            href="src/fonts/poppins-v19-latin-600.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin=""
+        />
+        <link
+            rel="preload"
+            href="src/fonts/poppins-v19-latin-700.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin=""
+        />
+        <link
+            rel="preload"
+            href="src/fonts/poppins-v19-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin=""
+        />
+
+        <!-- Preload css while critical css is loading -->
+        <link rel="preload" href="src/style.css" as="style" />
+
+        <!-- Inline critical CSS used for font loading -->
+        <style>
+            @import url("src/fonts/fonts.css");
+        </style>
+        <link rel="stylesheet" href="src/style.css" />
+        <script type="module" src="src/index.ts" defer></script>
+    </head>
+
+    <body class="h-screen font-poppins dark:bg-[#1D2023]">
+        <noscript>
+            <style>
+                /*if the user doesn't have js just expand all accordions  */
+                .accordion-content {
+                    max-height: none !important;
+                }
+                .accordion-icon {
+                    --tw-rotate: 180deg;
+                    transform: translate(
+                            var(--tw-translate-x),
+                            var(--tw-translate-y)
+                        )
+                        rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+                        skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+                        scaleY(var(--tw-scale-y));
+                }
+                .accordion {
+                    opacity: 100%;
+                }
+            </style>
+        </noscript>
+        <div class="mb-10 flex flex-col justify-center">
+            <div class="mt-5 flex w-full justify-center">
+                <img
+                    class="overflow-visible rounded-full object-cover"
+                    width="200"
+                    height="200"
+                    src="<%= avatar %>"
+                    alt="avatar"
+                />
+                <!-- </div> -->
+            </div>
+
+            <div class="space-y-4 pt-6 text-center">
+                <h1 class="text-3xl font-bold dark:text-gray-100">
+                    <%= username %>
+                </h1>
+                <p class="text-base font-semibold dark:text-white">
+                    <%= description %>
+                </p>
+            </div>
+
+            <div class="accordion-container">
+                <% for (const element of elements) { %>
+                <div class="accordion">
+                    <!-- Head -->
+
+                    <button class="accordion-button" aria-expanded="false">
+                        <span class="accordion-button-content">
+                            <!-- element method logo -->
+                            <div class="h-5 w-5">
+                                <img
+                                    class="h-auto w-full select-none"
+                                    width="20"
+                                    height="20"
+                                    src="<%= element.img %>"
+                                    alt="<%= element.name %>"
+                                />
+                            </div>
+
+                            <h2
+                                class="mr-auto ml-1 select-none py-2 font-semibold dark:text-white"
+                            >
+                                <%= element.name %>
+                            </h2>
+                            <div class="h-5 w-5">
+                                <img
+                                    class="accordion-icon"
+                                    width="20"
+                                    height="20"
+                                    src="src/images/chevron.svg"
+                                    alt="accordion icon"
+                                />
+                            </div>
+                        </span>
+                    </button>
+
+                    <div
+                        class="accordion-content"
+                        aria-hidden="true"
+                        tabindex="-1"
+                    >
+                        <div
+                            class="flex items-center justify-start px-5 pb-5 dark:text-gray-700"
+                            tabindex="-1"
+                        >
+                            <img
+                                width="162"
+                                height="162"
+                                class="qr"
+                                src="<%= element.qr %>"
+                                alt="QR code"
+                                tabindex="-1"
+                            />
+
+                            <div
+                                class="mx-4 mb-2 flex w-full flex-col items-center justify-center text-sm font-normal lg:ml-8 lg:mr-8"
+                                tabindex="-1"
+                            >
+                                <h2
+                                    class="ml-6 mb-4 block font-medium dark:text-gray-100"
+                                    tabindex="-1"
+                                >
+                                    <%= element.description %>
+                                </h2>
+                                <input
+                                    class="address"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="Loading..."
+                                    readonly=""
+                                    value="<%= element.content %>"
+                                    tabindex="-1"
+                                />
+                                <% if (element.visit) { %>
+                                <button class="visit-button" tabindex="-1">
+                                    <img
+                                        width="14"
+                                        height="14"
+                                        class="mr-2 select-none"
+                                        src="src/images/visit-symbol.svg"
+                                        alt="visit button"
+                                    />
+
+                                    <span>Visit</span>
+                                </button>
+                                <% } else { %>
+
+                                <button class="copy-button" tabindex="-1">
+                                    <img
+                                        width="14"
+                                        height="14"
+                                        class="mr-2 select-none"
+                                        src="src/images/copy-symbol.svg"
+                                        alt="copy button"
+                                    />
+
+                                    <span>Copy</span>
+                                </button>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <!-- </div> -->
+        </div>
+        <div class="fixed bottom-1 right-0 mr-5">
+            <a
+                href="https://github.com/Officialstrike/Solelink"
+                rel="noopener"
+                target="_blank"
+                class="dark:text-white"
+                >Get Your Own Personal Solelink Page &rarr;</a
+            >
+        </div>
+    </body>
+</html>

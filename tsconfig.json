@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "strict": true,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true
+    },
+    "include": ["src"]
+}

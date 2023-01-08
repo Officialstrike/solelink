@@ -1,0 +1,2 @@
+User-agent: *
+# you can edit below if you want to allow or disallow something.

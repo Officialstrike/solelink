@@ -1,0 +1,119 @@
+# The title of the webpage, displayed in the title bar of the browser window or in the browser's tab when the webpage is open.
+title = "Solelink example"
+
+# The username to display at the top of the webpage.
+username = "Solelink"
+
+# A brief description of the webpage, displayed under the username.
+description = "This is the example page."
+
+# The file path or a url of the avatar image to display on the webpage.
+# This can be a variety of image formats such as .svg, .png, .jpeg etc (we recommend using a 200x200 image).
+avatar = "src/images/solelink-avatar.svg" # for this example the icon is placed in the public folder(which is automatically stored as /), but I recommend you put in the src folder
+
+#A list of elements that make up the content of the webpage, these are visually represented as accordions.
+#This array of elements is represented in TOML as [[elements]]. Each element in this array represents a single accordion on the webpage, with its own name, logo image, description, and content. The content can either be copyable or have a "visit" button which opens it in a separate page.
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = "Github"
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = "src/images/github-logo.svg"
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = "You can obtain your own version of the page by following the link below."
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = "https://github.com/officialstrike/solelink"
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = true
+
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = "Twitter"
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = "src/images/twitter-logo.svg" # for mastodon: https://joinmastodon.org/logos/logo-white.svg
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = "You can keep up with the latest tweets from the creator of Solelink by following them on Twitter."
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = "https://twitter.com/OfficialStrike1"
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = true
+
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = "Solana"
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = "src/images/sol-logo.svg"
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = "Not required, but greatly appreciated."
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = "AZL3JZmzdVAdDHBgoMho9rfGUYjU2UizzMnPRpGPnXLZ"
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = false
+
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = "Ethereum"
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = "src/images/eth-logo.svg"
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = "Not required, but greatly appreciated."
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = "0x0215340EA9189d55EA243188a16934f514f6F653"
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = false
+
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = "Bitcoin"
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = "src/images/btc-logo.svg"
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = "Not required, but greatly appreciated."
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = "bc1q4f4g43xuanq68uun4nkrvgrskuzmwlpdfrcv7k"
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = false

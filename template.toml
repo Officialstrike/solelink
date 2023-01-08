@@ -1,0 +1,56 @@
+# The title of the webpage, displayed in the title bar of the browser window or in the browser's tab when the webpage is open.
+title = ""
+
+# The username to display at the top of the webpage.
+username = ""
+
+# A brief description of the webpage, displayed under the username.
+description = ""
+
+# The file path or a url of the avatar image to display on the webpage.
+# This can be a variety of image formats such as .svg, .png, .jpeg etc (we recommend using a 200x200 image).
+avatar = ""
+
+#A list of elements that make up the content of the webpage, these are visually represented as accordions.
+#This array of elements is represented in TOML as [[elements]]. Each element in this array represents a single accordion on the webpage, with its own name, logo image, description, and content. The content can either be copyable or have a "visit" button which opens it in a separate page.
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = ""
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = ""
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = ""
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = ""
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = false
+
+[[elements]]
+
+# The name of the element, displayed under its closed accordion.
+name = ""
+
+# The file path of the element's logo image, displayed beside the name in the accordion.
+# Like the avatar, this can be a variety of image formats, but it is recommended to use a small image.
+img = ""
+
+# When the element is expanded, the following items are shown underneath the above items:
+
+# A description, which can be used to specify something, ask for a follow, or do whatever.
+description = ""
+
+# This is the actual content that is shown in an input box, with the content also displayed in a QR code format next to the input box.
+content = ""
+
+# This decides whether you want the content to be copyable or to have a "visit" button.
+# A visit button opens the content in another page.
+visit = false

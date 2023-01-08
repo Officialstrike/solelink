@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply overflow-y-scroll scroll-smooth dark:[color-scheme:dark];
+}
+
+.accordion-container {
+    @apply container mx-auto mt-10 inline-block max-w-2xl space-y-4;
+}
+
+.accordion {
+    @apply mx-auto inline-block w-full rounded-md shadow-md dark:bg-[#292d3180];
+}
+
+.accordion-button {
+    @apply w-full transition-all duration-300;
+}
+
+.accordion-icon {
+    @apply h-auto w-full select-none transition-all duration-300;
+}
+
+.accordion-button-content {
+    @apply flex w-full items-center justify-between px-4 py-1;
+}
+
+.accordion-content {
+    @apply max-h-[0px] overflow-hidden rounded-md shadow-md transition-all duration-300;
+}
+.qr {
+    @apply hidden rounded-lg outline-none lg:inline-block;
+}
+.address {
+    @apply h-10 w-full overflow-hidden overflow-ellipsis whitespace-nowrap rounded-full px-5 text-center focus:outline-none dark:bg-[#1d202380] dark:text-white;
+}
+
+.copy-button,
+.visit-button {
+    @apply mt-1 inline-flex h-9 w-full items-center justify-center overflow-ellipsis rounded-full py-5 text-center text-base transition duration-300 ease-in-out active:brightness-95 dark:bg-[#191A1C] dark:text-white;
+}
+
+/* use default style for input */
+/* .address:focus-visible {
+    outline-color: Highlight;
+    outline-width: 2px;
+} */
+/*
+WebKit gets its native focus styles.
+ */
+/* @media (-webkit-min-device-pixel-ratio: 0) {
+    .address:focus-visible {
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+} */
